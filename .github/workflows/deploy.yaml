@@ -59,4 +59,4 @@ jobs:
           add: "--all"
           ref: "gh-pages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
