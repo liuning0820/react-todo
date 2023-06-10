@@ -12,6 +12,7 @@ function App() {
 
         <Todo text='Learn React'></Todo>
         <Todo text='Master React'></Todo>
+        <Todo text='Teach React'></Todo>
 
     </div>
   );
