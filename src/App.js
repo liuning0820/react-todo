@@ -8,12 +8,9 @@ import { db } from "./firebase.js";
 import {
   collection,
   onSnapshot,
-  serverTimestamp,
   addDoc,
   deleteDoc,
   doc,
-  query, 
-  orderBy,
   updateDoc
 } from "firebase/firestore";
 
