@@ -4,11 +4,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-const DATA = [
+var DATA = [
   { id: "todo-0", name: "Eat", completed: true },
   { id: "todo-1", name: "Sleep", completed: false },
   { id: "todo-2", name: "Repeat", completed: false },
 ];
+
+
+const savedTodos = localStorage.getItem("tasks");
+// if there are todos stored
+if (savedTodos) {
+  // return the parsed the JSON object back to a javascript object
+  DATA = JSON.parse(savedTodos)
+
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

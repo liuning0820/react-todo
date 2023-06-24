@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { nanoid } from "nanoid";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
@@ -57,6 +57,18 @@ function App(props) {
   }
 
   const [tasks, setTasks] = useState(props.tasks);
+
+    // useEffect to run once the component mounts
+    useEffect(() => {
+      // localstorage only support storing strings as keys and values
+      // - therefore we cannot store arrays and objects without converting the object
+      // into a string first. JSON.stringify will convert the object into a JSON string
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      // add the tasks as a dependancy because we want to update
+      // localstorage anytime the tasks state changes
+    }, [tasks]);
+
+
 
   const taskList = tasks
   .filter(FILTER_MAP[filter])
